@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import CartContext from "./components/Context/CartContext";
+import {  useContext } from "react";
+import StorePage from "./pages/Store";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import CartContainer from "./components/Cart/CartConatiner";
+import ProductDetails from "./pages/ProductDetails";
+import SignUpModal from "./components/AuthForm/SignUpModal";
+import ProfilePage from "./pages/ProfilePage";
+
 
 function App() {
+const ctx=useContext(CartContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SignUpModal></SignUpModal>
+      <Header></Header>
+      <Routes>
+      <Route path="/" element={<StorePage />} />
+       <Route path="/store" element={<StorePage />} />
+        <Route path="/user/:userID" element={<ProfilePage />} />
+        <Route
+          path="/products/:productID/:idToken"
+          element={<ProductDetails />}
+        />
+      </Routes>
+      {ctx.cartVisibility && <CartContainer></CartContainer>}
+   
+    </>
   );
 }
 
