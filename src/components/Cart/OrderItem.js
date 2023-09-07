@@ -2,7 +2,7 @@ import { Button, Col, Image, Row } from "react-bootstrap";
 import { useContext, useState } from "react";
 import CartContext from "../Context/CartContext";
 import SizeForm from "../../SizeForm";
-import SizeList from "../../SizeList";
+//import SizeList from "../../SizeList";
 
 function OrderItem(props) {
   const [isValue, setIsValue] = useState([]);
@@ -54,7 +54,8 @@ function OrderItem(props) {
 
           <SizeForm onSet={sizeHandler} />
 
-          <SizeList onList={isValue} />
+          {/* <SizeList onList={isValue} /> */}
+          {console.log(isValue)}
 
           <Button variant="outline-danger" onClick={removeOrder}>
             Remove
