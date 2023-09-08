@@ -14,8 +14,8 @@ function CartContainer() {
   return (
     <Container
       fluid
-      className="bg-light p-3 " expand="lg"
-      style={{ position: "fixed", top: 60, right: 0,left:-10 ,width:"60%", maxHeight: "70vh",display:"flex",flexDirection:"column",flexWrap:"wrap"}}
+      className="bg-light p-3 " expand="lg" 
+      style={{ position: "fixed", top: 60, right: 0,left:-20 ,width:"80%", maxHeight: "70vh",display:"flex",flexDirection:"column",flexWrap:"wrap"}}
     >
       <Button
         variant="outline-danger"
@@ -39,14 +39,16 @@ function CartContainer() {
           )}
         </Col>
       </Row>
+      <div style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap"}}>
       {orderList.length > 0 ? (<><hr />
-      <div className="d-flex justify-content-between">
-        <h5>Total Amount:</h5>
-        <h5>Rs. {totalAmount} </h5>
+      <div className="d-flex justify-content-start flex-column " >
+        <h6>Total Amount:</h6>
+        <h6>Rs. {totalAmount} </h6>
       </div>
-      <Button variant="primary" block>
+      <Button variant="primary" block >
         Place Order
       </Button></> ): <hr/>}
+      </div>
      
     </Container>
   );
