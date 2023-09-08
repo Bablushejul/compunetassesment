@@ -14,12 +14,12 @@ function CartContainer() {
   return (
     <Container
       fluid
-      className="bg-light p-3"
-      style={{ position: "fixed", top: 60, right: 0, width: "30%" , maxHeight: "70vh"}}
+      className="bg-light p-3 " expand="lg"
+      style={{ position: "fixed", top: 60, right: 0,left:-10 ,width:"60%", maxHeight: "70vh",display:"flex",flexDirection:"column",flexWrap:"wrap"}}
     >
       <Button
         variant="outline-danger"
-        className="float-end"
+        className="float-end" 
         onClick={()=>ctx.setCartVisibility(false)}
       >
         X
